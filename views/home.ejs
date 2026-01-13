@@ -11,7 +11,11 @@
           <% blogs.forEach(blog => { %>
             <div class="col">
           <div class="card col" style="width: 18rem;">
- <img src="<%= blog.coverImageURL %>" class="card-img-top" style="height:200px; object-fit:cover;">
+ <img 
+  src="<%= blog.coverImageURL || 'https://res.cloudinary.com/dkg8jznqn/image/upload/default-blog.png' %>" 
+  class="card-img-top"
+  onerror="this.src='https://res.cloudinary.com/dkg8jznqn/image/upload/default-blog.png'"
+>
 
   <div class="card-body">
     <h5 class="card-title"><%= blog.title %></h5>
